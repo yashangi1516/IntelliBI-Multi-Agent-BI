@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntelliBI | Business Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="#">IntelliBI<span>.</span></a>
+    <span class="nav-tag">AI BUSINESS INTELLIGENCE</span>
+    <a class="api-link" href="http://127.0.0.1:8000/docs" target="_blank" rel="noreferrer">API Docs ↗</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MULTI-AGENT AI PLATFORM</p>
+        <h1>Turn Business Data Into <span>Intelligent Decisions.</span></h1>
+        <p class="lead">Upload a business dataset and let specialist agents explore data quality, sales, finance, customer segments and recommendations.</p>
+        <a class="primary-btn" href="#workspace">Explore your data <span>↓</span></a>
+        <div class="status-line"><span class="status-dot"></span><span id="backendStatus">Checking backend connection…</span></div>
+      </div>
+      <div class="network-card">
+        <p class="eyebrow">AI AGENT NETWORK</p>
+        <div class="agent-grid">
+          <div class="agent">◈<b>Data Analyst</b></div><div class="agent">↗<b>Sales Agent</b></div>
+          <div class="agent">₹<b>Financial Agent</b></div><div class="agent">◎<b>Marketing Agent</b></div>
+          <div class="agent">▥<b>Visualization</b></div><div class="agent">▤<b>Report Agent</b></div>
+          <div class="agent">✦<b>Decision Agent</b></div><div class="agent orchestrator">✧<b>AI Orchestrator</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace" id="workspace">
+      <div class="section-heading">
+        <p class="eyebrow">DATA WORKSPACE</p>
+        <h2>Analyze your dataset</h2>
+        <p>Choose a CSV or Excel file (maximum 10 MB). The system stores it locally and generates a first-pass analysis.</p>
+      </div>
+      <div class="upload-panel">
+        <div class="upload-icon">↑</div>
+        <label for="datasetFile">Select a business dataset</label>
+        <input type="file" id="datasetFile" accept=".csv,.xlsx,.xls">
+        <button class="primary-btn" id="uploadBtn">Upload & analyze</button>
+        <p class="hint">Supported formats: CSV, XLSX, XLS</p>
+        <p id="uploadStatus" role="status"></p>
+      </div>
+      <div id="results" class="results hidden">
+        <h2 id="resultTitle">Dataset overview</h2>
+        <div class="stats-grid">
+          <div class="stat"><span>Rows</span><strong id="rowsStat">—</strong></div>
+          <div class="stat"><span>Columns</span><strong id="columnsStat">—</strong></div>
+          <div class="stat"><span>Missing values</span><strong id="missingStat">—</strong></div>
+          <div class="stat"><span>Duplicate rows</span><strong id="duplicatesStat">—</strong></div>
+        </div>
+        <h3>Column names</h3><div id="columnNames" class="chips"></div>
+        <h3>Dataset preview (first 10 rows)</h3>
+        <div class="table-wrap"><table id="previewTable"></table></div>
+        <h3>Multi-agent analysis</h3><div id="agentResults" class="agent-results"></div>
+        <h3>Recommendations</h3><ul id="recommendations"></ul>
+      </div>
+      <div class="saved-panel">
+        <div><h3>Previously uploaded datasets</h3><p>Files saved by this local IntelliBI backend.</p></div>
+        <button class="secondary-btn" id="refreshDatasets">Refresh list</button>
+        <ul id="datasetList"><li>Connect to the backend to view saved datasets.</li></ul>
+      </div>
+    </section>
+  </main>
+  <footer>IntelliBI · Multi-Agent Business Intelligence System · BCA Major Project</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
